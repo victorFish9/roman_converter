@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Numeral Converter</title>
+</head>
+
+<body>
+    <h1>Roman Numeral Converter</h1>
+    <form id="roman-form" method="GET" action="{% url 'roman_convert' %}">
+        <label for="roman">Enter Roman Numeral:</label>
+        <input type="text" id="roman" name="roman" required>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if result %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+
+    {% if error %}
+    <h2 style="color: red;">Error: {{ error }}</h2>
+    {% endif %}
+</body>
+
+</html>
